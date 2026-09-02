@@ -46,7 +46,7 @@ The organizer discrepancies are the first thing to resolve. Do not silently merg
 | E026 | Dillon Cortez | Named in Luma’s 46-going display | observed / high | https://luma.com/psyop-hackathon |
 | E027 | Harsh O | Named in Luma’s 46-going display | observed / high | https://luma.com/psyop-hackathon |
 | E028 | 44 unnamed registrants | Aggregate count only | observed / high | https://luma.com/psyop-hackathon |
-| E029 | Public attendance posts | Not yet searched in a bounded, receipt-backed pass | unresolved / low | — |
+| E029 | Public attendance posts | Bounded web-search pass found event pages and discussion, but no independently verified self-authored attendance claim in this pass | observed / medium | — |
 
 Stronger wording such as “plans to attend” requires a self-authored public statement or an official event artifact. “Luma-visible attendee” is the current ceiling for E026 and E027.
 
