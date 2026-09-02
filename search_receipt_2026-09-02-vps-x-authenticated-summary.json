@@ -1,0 +1,191 @@
+{
+  "captured_at_utc": "2026-09-02T14:40:04.036965Z",
+  "scope": "bounded public search; read-only",
+  "limit": 20,
+  "platform": "X",
+  "app": "marvin-x",
+  "account": "marvin_panics",
+  "queries": [
+    {
+      "query": "Netwar Con",
+      "exit_code": 0,
+      "result_count": 7,
+      "results": [
+        {
+          "id": "2094627507651654118",
+          "author": "marvin_panics",
+          "created_at": "2026-09-01T03:24:48.000Z"
+        },
+        {
+          "id": "2094627498344460352",
+          "author": "marvin_panics",
+          "created_at": "2026-09-01T03:24:46.000Z"
+        },
+        {
+          "id": "2094627480321573336",
+          "author": "marvin_panics",
+          "created_at": "2026-09-01T03:24:42.000Z"
+        },
+        {
+          "id": "2094539279611408700",
+          "author": "leo_guinan",
+          "created_at": "2026-08-31T21:34:13.000Z"
+        },
+        {
+          "id": "2094505423810465853",
+          "author": "leo_guinan",
+          "created_at": "2026-08-31T19:19:41.000Z"
+        },
+        {
+          "id": "2093367286467854556",
+          "author": "WilliamArmentr5",
+          "created_at": "2026-08-28T15:57:08.000Z"
+        },
+        {
+          "id": "2093364189028815288",
+          "author": "grayzoneintel",
+          "created_at": "2026-08-28T15:44:50.000Z"
+        }
+      ]
+    },
+    {
+      "query": "Last Psyop",
+      "exit_code": 0,
+      "result_count": 20,
+      "results": [
+        {
+          "id": "2095141841826189373",
+          "author": "cordoba_don",
+          "created_at": "2026-09-02T13:28:35.000Z"
+        },
+        {
+          "id": "2095130782771618148",
+          "author": "mevoth",
+          "created_at": "2026-09-02T12:44:38.000Z"
+        },
+        {
+          "id": "2095127208624820608",
+          "author": "sebaka78",
+          "created_at": "2026-09-02T12:30:26.000Z"
+        },
+        {
+          "id": "2095106884537852280",
+          "author": "Ed_L_P",
+          "created_at": "2026-09-02T11:09:41.000Z"
+        },
+        {
+          "id": "2095098302161150323",
+          "author": "GorillaTaktics",
+          "created_at": "2026-09-02T10:35:34.000Z"
+        },
+        {
+          "id": "2095097323122462999",
+          "author": "SonjaKubicki",
+          "created_at": "2026-09-02T10:31:41.000Z"
+        },
+        {
+          "id": "2095094172122538057",
+          "author": "Rob2850",
+          "created_at": "2026-09-02T10:19:10.000Z"
+        },
+        {
+          "id": "2095076613314548044",
+          "author": "zulkhai56327999",
+          "created_at": "2026-09-02T09:09:23.000Z"
+        },
+        {
+          "id": "2095076173923430419",
+          "author": "FutureSchool",
+          "created_at": "2026-09-02T09:07:39.000Z"
+        },
+        {
+          "id": "2095066257989239061",
+          "author": "2uHipHop",
+          "created_at": "2026-09-02T08:28:15.000Z"
+        },
+        {
+          "id": "2095062447199604781",
+          "author": "idavo16",
+          "created_at": "2026-09-02T08:13:06.000Z"
+        },
+        {
+          "id": "2095057878164136389",
+          "author": "Valerie_tbh",
+          "created_at": "2026-09-02T07:54:57.000Z"
+        },
+        {
+          "id": "2095041233467187668",
+          "author": "amygdalahurty",
+          "created_at": "2026-09-02T06:48:48.000Z"
+        },
+        {
+          "id": "2095039071621988688",
+          "author": "KamStaszewski",
+          "created_at": "2026-09-02T06:40:13.000Z"
+        },
+        {
+          "id": "2095013347242467628",
+          "author": "XRP4Me33",
+          "created_at": "2026-09-02T04:58:00.000Z"
+        },
+        {
+          "id": "2095001439869325556",
+          "author": "Jakemillsaps88",
+          "created_at": "2026-09-02T04:10:41.000Z"
+        },
+        {
+          "id": "2094987367694418016",
+          "author": "Dr_RedPillLite",
+          "created_at": "2026-09-02T03:14:46.000Z"
+        },
+        {
+          "id": "2094987129176691184",
+          "author": "zeroDEIUSA",
+          "created_at": "2026-09-02T03:13:49.000Z"
+        },
+        {
+          "id": "2094980701904859312",
+          "author": "whatsinourH2O",
+          "created_at": "2026-09-02T02:48:16.000Z"
+        },
+        {
+          "id": "2094974397950128578",
+          "author": "Doffx",
+          "created_at": "2026-09-02T02:23:13.000Z"
+        }
+      ]
+    },
+    {
+      "query": "psyop hackathon",
+      "exit_code": 0,
+      "result_count": 5,
+      "results": [
+        {
+          "id": "2094745534884196516",
+          "author": "sd1sd2sd3z",
+          "created_at": "2026-09-01T11:13:48.000Z"
+        },
+        {
+          "id": "2094627507651654118",
+          "author": "marvin_panics",
+          "created_at": "2026-09-01T03:24:48.000Z"
+        },
+        {
+          "id": "2094455473466409217",
+          "author": "DefenderOfBasic",
+          "created_at": "2026-08-31T16:01:12.000Z"
+        },
+        {
+          "id": "2094200032903758251",
+          "author": "TheVatStack",
+          "created_at": "2026-08-30T23:06:10.000Z"
+        },
+        {
+          "id": "2093364189028815288",
+          "author": "grayzoneintel",
+          "created_at": "2026-08-28T15:44:50.000Z"
+        }
+      ]
+    }
+  ]
+}

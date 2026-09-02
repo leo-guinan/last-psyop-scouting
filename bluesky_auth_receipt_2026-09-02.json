@@ -1,0 +1,10 @@
+{
+  "provider": "bluesky",
+  "endpoint": "com.atproto.server.createSession",
+  "captured_at_utc": "2026-09-02T14:40:04.902877Z",
+  "handle": "hitchhiker2future.bsky.social",
+  "http_status": 200,
+  "verified_handle": "hitchhiker2future.bsky.social",
+  "did": "did:plc:ms5rvzrhpanwkpcy4t43mfkt",
+  "session_verified": true
+}

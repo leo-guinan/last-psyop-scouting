@@ -77,6 +77,15 @@ The adapter in `tools/social_search.py` was compiled and run manually on `marvin
 
 The remote X rail is currently blocked by `RefreshTokenError` / `invalid_request`; the remote Bluesky API returned HTTP 403. These are source-availability boundaries, not attendance findings.
 
+Fresh authenticated VPS receipts now exist:
+
+- `search_receipt_2026-09-02-vps-x-authenticated-summary.json`: `@marvin_panics` identity verified; searches returned 7, 20, and 5 results for the three bounded queries.
+- `bluesky_auth_receipt_2026-09-02.json`: `@hitchhiker2future.bsky.social` matched the returned DID with HTTP 200.
+
+The raw X receipt containing platform pagination cursors remains on the VPS and local working copy only; it is intentionally excluded from GitHub. The public summary preserves query/result-count and author/time metadata without cursors or media URLs.
+
+The earlier blocked rows remain in the CSV as historical failures. The current authenticated Bluesky session proves credential/account access, but does not unblock the public AppView search endpoint, which remains a separate HTTP 403 boundary.
+
 ### Conceptual territories
 
 These are territories discussed or used as examples in the organizers’ public writing. They are not event participants unless a separate source establishes that.
