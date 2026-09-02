@@ -35,6 +35,7 @@ RECEIPTS = ROOT / "receipts"
 LOCK = ROOT / "worker.lock"
 YT_SLEEP = float(os.environ.get("YTDLP_SLEEP_SECONDS", "8"))
 ELEVEN_SLEEP = float(os.environ.get("ELEVENLABS_MIN_INTERVAL_SECONDS", "10"))
+CAPTION_SLEEP = float(os.environ.get("CAPTION_MIN_INTERVAL_SECONDS", "5"))
 MAX_ATTEMPTS = int(os.environ.get("TRANSCRIBER_MAX_ATTEMPTS", "3"))
 YTDLP = os.environ.get("YTDLP_BIN", "yt-dlp")
 RETRY_STATUSES = {429, 500, 502, 503, 504}
@@ -148,7 +149,9 @@ def fetch_captions(video_id_value: str | None) -> dict[str, Any] | None:
         return None
     try:
         fetched = YouTubeTranscriptApi().fetch(video_id_value, languages=["en"])
-    except Exception:
+    except Exception as exc:
+        if type(exc).__name__ in {"RequestBlocked", "IpBlocked"}:
+            raise AcquisitionBlockedError("youtube_caption_request_blocked") from exc
         return None
     snippets = [{"text": s.text, "start": s.start, "duration": s.duration} for s in fetched.snippets]
     return {"source": "youtube_caption_track", "language_code": fetched.language_code, "text": " ".join(s["text"] for s in snippets), "snippets": snippets}
@@ -161,6 +164,16 @@ def provider_wait(con: sqlite3.Connection) -> None:
         if remaining > 0:
             time.sleep(remaining)
     con.execute("INSERT OR REPLACE INTO meta(key,value) VALUES('last_elevenlabs_request',?)", (str(time.time()),))
+    con.commit()
+
+
+def caption_wait(con: sqlite3.Connection) -> None:
+    row = con.execute("SELECT value FROM meta WHERE key='last_caption_request'").fetchone()
+    if row:
+        remaining = CAPTION_SLEEP - (time.time() - float(row["value"]))
+        if remaining > 0:
+            time.sleep(remaining)
+    con.execute("INSERT OR REPLACE INTO meta(key,value) VALUES('last_caption_request',?)", (str(time.time()),))
     con.commit()
 
 
@@ -200,6 +213,10 @@ class ProviderError(RuntimeError):
         self.status = status
 
 
+class AcquisitionBlockedError(RuntimeError):
+    pass
+
+
 def persist_result(job: sqlite3.Row, result: dict[str, Any], status: int, metadata: dict[str, Any], started: str, acquisition: str, acquisition_error: str | None = None, provider: str = "elevenlabs", model: str = "scribe_v2", estimated_cost: float | None = None) -> tuple[Path, Path]:
     OUT.mkdir(parents=True, exist_ok=True); RECEIPTS.mkdir(parents=True, exist_ok=True)
     transcript_path = OUT / f"{job['id']}.json"
@@ -217,6 +234,7 @@ def process_one(con: sqlite3.Connection, job: sqlite3.Row) -> None:
     status = 0
     started = now()
     try:
+        caption_wait(con)
         captions = fetch_captions(job["video_id"])
         if captions:
             transcript_path, receipt_path = persist_result(job, captions, 200, {"id": job["video_id"], "title": job["title"]}, started, "youtube_caption_track", provider="youtube", model="caption_track", estimated_cost=0.0)
@@ -247,6 +265,10 @@ def process_one(con: sqlite3.Connection, job: sqlite3.Row) -> None:
         duration = result.get("audio_duration_secs")
         set_status(con, job["id"], "completed", transcript_path=str(transcript_path), receipt_path=str(receipt_path), error=None)
         print(json.dumps({"job_id": job["id"], "status": "completed", "duration": duration, "acquisition": acquisition}))
+    except AcquisitionBlockedError as exc:
+        set_status(con, job["id"], "failed", error=str(exc))
+        print(json.dumps({"job_id": job["id"], "status": "halted", "error": str(exc)}))
+        raise
     except ProviderError as exc:
         if exc.status in RETRY_STATUSES and job["attempts"] < MAX_ATTEMPTS:
             delay = min(900, 30 * (3 ** max(0, job["attempts"] - 1)))
