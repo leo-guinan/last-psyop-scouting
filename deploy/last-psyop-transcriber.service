@@ -1,0 +1,27 @@
+[Unit]
+Description=Last Psyop bounded YouTube transcription queue
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lastpsyop
+Group=lastpsyop
+WorkingDirectory=/opt/last-psyop-transcriber
+EnvironmentFile=/etc/last-psyop-transcriber/elevenlabs.env
+Environment=TRANSCRIBER_ROOT=/var/lib/last-psyop-transcriber
+Environment=YTDLP_SLEEP_SECONDS=8
+Environment=ELEVENLABS_MIN_INTERVAL_SECONDS=10
+Environment=TRANSCRIBER_MAX_ATTEMPTS=3
+ExecStart=/opt/last-psyop-transcriber/venv/bin/python /opt/last-psyop-transcriber/app/youtube_transcription_worker.py run --poll-seconds 30
+Restart=on-failure
+RestartSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/last-psyop-transcriber
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
