@@ -293,11 +293,16 @@ def main() -> int:
     p = sub.add_parser("enqueue-channel"); p.add_argument("url"); p.add_argument("--limit", type=int, default=10)
     sub.add_parser("status")
     p = sub.add_parser("run"); p.add_argument("--poll-seconds", type=int, default=30)
+    sub.add_parser("run-once")
     args = ap.parse_args(); con = db()
     if args.cmd == "enqueue":
         for url in args.urls: print(json.dumps({"job_id": enqueue(con, url)}))
     elif args.cmd == "enqueue-channel": print(json.dumps({"added": enqueue_channel(con, args.url, args.limit)}))
     elif args.cmd == "status": status(con)
+    elif args.cmd == "run-once":
+        job = claim(con)
+        if job: process_one(con, job)
+        else: print(json.dumps({"status": "idle"}))
     else: run(con, args.poll_seconds)
     return 0
 
