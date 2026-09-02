@@ -50,6 +50,20 @@ The organizer discrepancies are the first thing to resolve. Do not silently merg
 
 Stronger wording such as “plans to attend” requires a self-authored public statement or an official event artifact. “Luma-visible attendee” is the current ceiling for E026 and E027.
 
+### Public discussion and planning-repository signals
+
+| ID | Entity | What is actually supported | State | Source |
+|---|---|---|---|---|
+| E030 | `Prosocial-Engineering/netwar-con` | Public planning repository for the September Event; README links the event and lists alternative names | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
+| E031 | DefenderOfBasic | Pinned public post discusses explaining the hackathon to people being pitched or invited to join | observed / high | https://vanlett.com/DefenderOfBasic |
+| E032 | DefenderOfBasic | 34 public GitHub contributions to the planning repository | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
+| E033 | suntzugi | 32 public GitHub contributions to the planning repository | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
+| E034 | Kat-Stack | 18 public GitHub contributions to the planning repository | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
+| E035 | OmarShehata | 2 public GitHub contributions to the planning repository | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
+| E036 | `Prosocial-Engineering/September-Game` | Linked by the planning README, but currently returns 404 | unresolved / medium | https://github.com/Prosocial-Engineering/netwar-con |
+
+None of these rows independently establishes physical attendance. Repository contribution is evidence of public project involvement only. The DefenderOfBasic post is recruitment/discussion evidence, not an attendance claim.
+
 ### Conceptual territories
 
 These are territories discussed or used as examples in the organizers’ public writing. They are not event participants unless a separate source establishes that.
@@ -98,7 +112,8 @@ A mention is not evidence of attendance, endorsement, sponsorship, or contact.
 7. Search the named territories for public event references, without treating ordinary community members as targets.
 8. Locate the public MITRE/SP!CE source and compare the event’s description against the original framework.
 9. Capture a new readback of Luma before the event and after the event. Record count changes separately from identity claims.
-10. After the event, create a second ledger layer for submitted psyops: declared target, payload, channel, disclosure, success metric, harm metric, stop condition, and observed outcome.
+10. Recheck the linked `September-Game` repository and record whether the 404 resolves, redirects, or remains unavailable.
+11. After the event, create a second ledger layer for submitted psyops: declared target, payload, channel, disclosure, success metric, harm metric, stop condition, and observed outcome.
 
 ## Falsifiers
 
