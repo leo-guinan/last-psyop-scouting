@@ -61,8 +61,15 @@ Stronger wording such as “plans to attend” requires a self-authored public s
 | E034 | Kat-Stack | 18 public GitHub contributions to the planning repository | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
 | E035 | OmarShehata | 2 public GitHub contributions to the planning repository | observed / high | https://github.com/Prosocial-Engineering/netwar-con |
 | E036 | `Prosocial-Engineering/September-Game` | Linked by the planning README, but currently returns 404 | unresolved / medium | https://github.com/Prosocial-Engineering/netwar-con |
+| E037 | X public search rail | Explicit `personal-x` auth and search requests returned HTTP 401; unavailable source, not evidence of zero X posts | unmeasured / high | search receipt |
+| E038 | Bluesky direct public API | Search requests returned HTTP 403 from this environment; unavailable source, not evidence of zero Bluesky posts | unmeasured / high | search receipt |
+| E039 | `@defenderofbasic.bsky.social` | Indexed profile links Netwar Con and describes an Austin September 4 event inviting influence operators from culture-war territories | observed / high | https://bsky.app/profile/defenderofbasic.bsky.social |
 
 None of these rows independently establishes physical attendance. Repository contribution is evidence of public project involvement only. The DefenderOfBasic post is recruitment/discussion evidence, not an attendance claim.
+
+### Social-search receipt
+
+The raw bounded search receipt is `search_receipt_2026-09-02.json`. It records the UTC capture time, exact queries, X authentication/search errors, and Bluesky API errors. Indexed Bluesky pages were used only as a fallback discovery surface. Platform unavailability is recorded as `unmeasured`, never as zero activity.
 
 ### Conceptual territories
 

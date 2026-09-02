@@ -1,0 +1,64 @@
+{
+  "captured_at_utc": "2026-09-02T12:33:19.313601Z",
+  "scope": "bounded public search; read-only",
+  "x": [
+    {
+      "query": "\"Netwar Con\"",
+      "exit_code": 1,
+      "stdout": "{\n  \"title\":\"Unauthorized\",\n  \"type\":\"about:blank\",\n  \"status\":401,\n  \"detail\":\"Unauthorized\"\n}\n",
+      "stderr": "",
+      "json": {
+        "title": "Unauthorized",
+        "type": "about:blank",
+        "status": 401,
+        "detail": "Unauthorized"
+      }
+    },
+    {
+      "query": "\"Last Psyop\"",
+      "exit_code": 1,
+      "stdout": "{\n  \"title\":\"Unauthorized\",\n  \"type\":\"about:blank\",\n  \"status\":401,\n  \"detail\":\"Unauthorized\"\n}\n",
+      "stderr": "",
+      "json": {
+        "title": "Unauthorized",
+        "type": "about:blank",
+        "status": 401,
+        "detail": "Unauthorized"
+      }
+    },
+    {
+      "query": "\"psyop hackathon\"",
+      "exit_code": 1,
+      "stdout": "{\n  \"title\":\"Unauthorized\",\n  \"type\":\"about:blank\",\n  \"status\":401,\n  \"detail\":\"Unauthorized\"\n}\n",
+      "stderr": "",
+      "json": {
+        "title": "Unauthorized",
+        "type": "about:blank",
+        "status": 401,
+        "detail": "Unauthorized"
+      }
+    }
+  ],
+  "bluesky": [
+    {
+      "query": "Netwar Con",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=Netwar+Con&limit=100",
+      "error": "<HTTPError 403: 'Forbidden'>"
+    },
+    {
+      "query": "Last Psyop",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=Last+Psyop&limit=100",
+      "error": "<HTTPError 403: 'Forbidden'>"
+    },
+    {
+      "query": "psyop hackathon",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=psyop+hackathon&limit=100",
+      "error": "<HTTPError 403: 'Forbidden'>"
+    },
+    {
+      "query": "Distribution Hall psyop",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=Distribution+Hall+psyop&limit=100",
+      "error": "<HTTPError 403: 'Forbidden'>"
+    }
+  ]
+}
