@@ -1,0 +1,59 @@
+{
+  "captured_at_utc": "2026-09-02T13:54:19.318749Z",
+  "scope": "bounded public search; read-only",
+  "queries": [
+    "Netwar Con",
+    "Last Psyop",
+    "psyop hackathon"
+  ],
+  "limit": 20,
+  "x": [
+    {
+      "query": "Netwar Con",
+      "app": "marvin-x",
+      "username": "marvin_panics",
+      "command": "xurl search",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "\u001b[31mError: Auth Error: RefreshTokenError (cause: Auth Error: RefreshTokenError (cause: oauth2: \"invalid_request\" \"Value passed for the token was invalid.\"))\u001b[0m\n"
+    },
+    {
+      "query": "Last Psyop",
+      "app": "marvin-x",
+      "username": "marvin_panics",
+      "command": "xurl search",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "\u001b[31mError: Auth Error: RefreshTokenError (cause: Auth Error: RefreshTokenError (cause: oauth2: \"invalid_request\" \"Value passed for the token was invalid.\"))\u001b[0m\n"
+    },
+    {
+      "query": "psyop hackathon",
+      "app": "marvin-x",
+      "username": "marvin_panics",
+      "command": "xurl search",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "\u001b[31mError: Auth Error: RefreshTokenError (cause: Auth Error: RefreshTokenError (cause: oauth2: \"invalid_request\" \"Value passed for the token was invalid.\"))\u001b[0m\n"
+    }
+  ],
+  "bluesky": [
+    {
+      "query": "Netwar Con",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=Netwar+Con&limit=20",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "query": "Last Psyop",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=Last+Psyop&limit=20",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "query": "psyop hackathon",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=psyop+hackathon&limit=20",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

@@ -71,6 +71,12 @@ None of these rows independently establishes physical attendance. Repository con
 
 The raw bounded search receipt is `search_receipt_2026-09-02.json`. It records the UTC capture time, exact queries, X authentication/search errors, and Bluesky API errors. Indexed Bluesky pages were used only as a fallback discovery surface. Platform unavailability is recorded as `unmeasured`, never as zero activity.
 
+### VPS read-only rail
+
+The adapter in `tools/social_search.py` was compiled and run manually on `marvin-vps`. The VPS receipt is `search_receipt_2026-09-02-vps.json`. It uses the existing `marvin-x` configuration for read-only X access and the unauthenticated Bluesky public API. No Bluesky credentials were installed, no posting capability was added, and no timer or systemd service was enabled.
+
+The remote X rail is currently blocked by `RefreshTokenError` / `invalid_request`; the remote Bluesky API returned HTTP 403. These are source-availability boundaries, not attendance findings.
+
 ### Conceptual territories
 
 These are territories discussed or used as examples in the organizers’ public writing. They are not event participants unless a separate source establishes that.
