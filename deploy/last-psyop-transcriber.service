@@ -10,6 +10,7 @@ Group=lastpsyop
 WorkingDirectory=/opt/last-psyop-transcriber
 EnvironmentFile=/etc/last-psyop-transcriber/elevenlabs.env
 Environment=TRANSCRIBER_ROOT=/var/lib/last-psyop-transcriber
+Environment=YTDLP_BIN=/opt/last-psyop-transcriber/venv/bin/yt-dlp
 Environment=YTDLP_SLEEP_SECONDS=8
 Environment=ELEVENLABS_MIN_INTERVAL_SECONDS=10
 Environment=TRANSCRIBER_MAX_ATTEMPTS=3
